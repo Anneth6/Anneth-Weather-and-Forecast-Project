@@ -1,0 +1,15 @@
+Forecast plan
+
+1. Design
+   - 5 day forecast (SheCodes APi has a daily forecast to pull from)
+   - day
+   - weather icon
+   - Low and High / Min and Max
+   * check other available fields
+   * consider celsius to fahrenheit toggle
+2. HTML
+3. CSS
+   - note updates for dark theme
+   - condier changing theme button to toggle instead
+4. JS Forecast API
+5. JS API integration

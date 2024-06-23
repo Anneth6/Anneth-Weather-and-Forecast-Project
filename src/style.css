@@ -76,12 +76,17 @@ button:hover {
   border: none;
   cursor: pointer;
 }
+.search-form {
+  display: flex;
+  justify-content: space-between;
+}
 .search-form-input {
   background-color: rgb(33, 150, 243, 0.15);
   border: none;
   border-radius: 5px;
   width: 80%;
-  padding: 15px;
+  padding: 5px;
+  margin: 0;
   color: #1976d2;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
@@ -93,7 +98,7 @@ button:hover {
 .search-form-submit {
   background-color: rgba(33, 150, 243, 0.8);
   color: white;
-  padding: 15px 20px;
+  padding: 20px;
   margin: 5px;
   border: none;
   border-radius: 10px;
@@ -159,6 +164,10 @@ main {
   justify-content: end;
   line-height: 20px;
   padding-top: 5px;
+  margin-top: 0;
+}
+.feels-like-container-base {
+  margin-top: 0;
 }
 .feels-like-value {
   font-size: 16px;
