@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Color+Emoji&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <title>Anneth's Weather</title>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <button class="themeButton">Light or Dark Mode</button>
+        <!-- website/shecodes icon if needed
+       welcome message to page?
+       serach box and button
+       theme toggle (dark/light)-->
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            required
+            class="search-form-input"
+            id="search-form-city"
+          />
+          <!-- JS notes: trim city name, min character limit -->
+          <input type="submit" value="Search" class="search-form-submit" />
+        </form>
+      </header>
+      <main>
+        <!-- city name, icon, temp and feels like on left of page
+ if possible toggle for Fahrenheit/Celcius-->
+        <!-- Day and full date details, weather description, humdity and wind speed on right of page -->
+        <!-- future build in forecast, to include: 5 days, each displaying day (3 letters), icon, low and highs
+   if possible build in humdity and wind speed under each or a toggle for either -->
+        <div class="weather-app-body">
+          <div>
+            <h1 class="city-name" id="city"></h1>
+            <!--to update with form search entry-->
+            <p class="weather-details">
+              <span id="time"></span>, <span id="weather-description"></span>
+              <br />
+              Humidity:
+              <span class="variable-details" id="current-humidity"></span>,
+              Wind: <span class="variable-details" id="current-wind"></span>
+              <!--api to update weather description, humidity and wind speed-->
+            </p>
+          </div>
+          <div class="weather-feels-container">
+            <span class="weather-temp-container">
+              <div id="weather-icon"></div>
+              <div class="weather-value" id="weather-temp"></div>
+              <div class="weather-unit">&deg;C</div>
+              <br />
+            </span>
+            <div class="feels-like-container">
+              <p>
+                Feels like:
+                <span
+                  class="feels-value variable-details"
+                  id="feels-temp"
+                ></span>
+                <span class="feels-unit">&deg;C</span>
+                <br />
+              </p>
+              <!--api to update icon, temp and feels like temp (if feels like temp possible and within my skills!)-->
+            </div>
+          </div>
+          <!-- <div>forecast to come in future</div> -->
+        </div>
+      </main>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/Anneth6" target="_blank">Ann Russell</a>, is
+        open-sourced on
+        <a
+          href="https://github.com/Anneth6/Anneth-Weather-App-Project"
+          target="_blank"
+          >GitHub</a
+        >
+        and hosted on
+        <a href="https://main--anneth-weather.netlify.app/" target="_blank"
+          >Netlify</a
+        >.
+      </footer>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
