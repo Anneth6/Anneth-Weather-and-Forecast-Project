@@ -118,6 +118,7 @@ main {
   display: flex;
   justify-content: space-between;
   max-width: 100%;
+  margin-bottom: 15px;
 }
 .city-name {
   font-weight: 700;
@@ -132,6 +133,8 @@ main {
 .weather-details {
   font-size: 18px;
   line-height: 30px;
+  padding: 5px;
+  margin: 0;
 }
 .variable-details {
   color: rgb(25, 118, 210);
@@ -179,6 +182,37 @@ main {
   font-size: 11px;
   padding-right: 0;
   justify-content: start;
+}
+
+.forecast-weather {
+  display: flex;
+  justify-content: space-around;
+}
+.forecast-days {
+  display: block;
+}
+.forecast-day {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.forecast-icon {
+  font-size: 32px;
+  display: block;
+  text-align: center;
+}
+.forecast-temperatures {
+  font-size: 16px;
+  padding: 5px 5px;
+  text-align: center;
+}
+.forecast-variable-max {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.forecast-variable-min {
+  color: rgb(172, 172, 172);
+  font-weight: 100;
 }
 
 footer {

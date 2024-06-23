@@ -47,7 +47,8 @@
               <span id="time"></span>, <span id="weather-description"></span>
               <br />
               Humidity:
-              <span class="variable-details" id="current-humidity"></span>,
+              <span class="variable-details" id="current-humidity"></span>
+              <br />
               Wind: <span class="variable-details" id="current-wind"></span>
               <!--api to update weather description, humidity and wind speed-->
             </p>
@@ -72,7 +73,21 @@
               <!--api to update icon, temp and feels like temp (if feels like temp possible and within my skills!)-->
             </div>
           </div>
-          <!-- <div>forecast to come in future</div> -->
+        </div>
+        <!-- <div>forecast to come in future</div> -->
+        <div class="forecast-weather">
+          <!-- flex this -->
+          <div class="forecast-days">
+            <div class="forecast-day">Tue</div>
+            <div class="forecast-icon">🌤️</div>
+            <div class="forecast-temperatures">
+              <div>
+                <!-- flex this -->
+                <span class="forecast-variable-max">15&deg;</span>
+                <span class="forecast-temperature">9&deg;</span>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <footer>
