@@ -17,10 +17,6 @@
     <div class="weather-app">
       <header>
         <button class="themeButton">Light or Dark Mode</button>
-        <!-- website/shecodes icon if needed
-       welcome message to page?
-       serach box and button
-       theme toggle (dark/light)-->
         <form class="search-form" id="search-form">
           <input
             type="search"
@@ -29,27 +25,19 @@
             class="search-form-input"
             id="search-form-city"
           />
-          <!-- JS notes: trim city name, min character limit -->
           <input type="submit" value="Search" class="search-form-submit" />
         </form>
       </header>
       <main>
-        <!-- city name, icon, temp and feels like on left of page
- if possible toggle for Fahrenheit/Celcius-->
-        <!-- Day and full date details, weather description, humdity and wind speed on right of page -->
-        <!-- future build in forecast, to include: 5 days, each displaying day (3 letters), icon, low and highs
-   if possible build in humdity and wind speed under each or a toggle for either -->
         <div class="weather-app-body">
           <div>
             <h1 class="city-name" id="city"></h1>
-            <!--to update with form search entry-->
             <p class="weather-details">
               <span id="time"></span> <br />
               Humidity:
               <span class="variable-details" id="current-humidity"></span>
               <br />
               Wind: <span class="variable-details" id="current-wind"></span>
-              <!--api to update weather description, humidity and wind speed-->
             </p>
           </div>
           <div class="weather-feels-container">
@@ -71,25 +59,11 @@
                 <span class="feels-unit">&deg;C</span>
                 <br />
               </p>
-              <!--api to update icon, temp and feels like temp (if feels like temp possible and within my skills!)-->
             </div>
           </div>
         </div>
-        <!-- <div>forecast to come in future</div> -->
-        <div class="forecast-weather" id="forecast">
-          <!-- flex this -->
-          <!-- <div class="forecast-days">
-            <div class="forecast-day">Tue</div>
-            <div class="forecast-icon">🌤️</div>
-            <div class="forecast-temperatures">
-              <div> -->
-          <!-- flex this -->
-          <!-- <span class="forecast-variable-max">15&deg;</span>
-                <span class="forecast-variable-min">9&deg;</span>
-              </div>
-            </div>
-          </div> -->
-        </div>
+
+        <div class="forecast-weather" id="forecast"></div>
       </main>
       <footer>
         This project was coded by
