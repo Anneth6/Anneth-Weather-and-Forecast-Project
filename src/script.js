@@ -64,7 +64,28 @@ function formatDate(date) {
     "Saturday",
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
+
+  let number = date.getDate();
+  console.log(number);
+
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let calMonth = months[date.getMonth()];
+
+  return `${day}, ${number} ${calMonth} at ${hours}:${minutes}`;
 }
 
 // sets api search funtion, sourcing city from searchInput
@@ -88,7 +109,6 @@ function displayForecast() {
   let forecast = document.querySelector("#forecast");
 
   let shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
   let forecastHtml = "";
 
   shortDays.forEach(function (day) {

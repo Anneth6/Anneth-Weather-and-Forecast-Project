@@ -162,6 +162,13 @@ main {
   font-weight: 500;
   margin-top: 20px;
 }
+.weather-descript {
+  display: flex;
+  justify-content: end;
+  margin-right: 5px;
+  margin-top: 0;
+  font-style: italic;
+}
 .feels-like-container {
   display: flex;
   justify-content: end;
