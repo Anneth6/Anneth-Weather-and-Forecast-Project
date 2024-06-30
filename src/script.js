@@ -40,6 +40,8 @@ function refreshWeather(response) {
   feels.innerHTML = Math.round(tempFeels);
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
   wind.innerHTML = `${windSpeed}km/h`;
+
+  getForecast(response.data.city);
 }
 
 //date, day time function and format
@@ -66,7 +68,6 @@ function formatDate(date) {
   let day = days[date.getDay()];
 
   let number = date.getDate();
-  console.log(number);
 
   let months = [
     "January",
@@ -105,8 +106,16 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
-  let forecast = document.querySelector("#forecast");
+function getForecast(city) {
+  let apiForecastKey = "9e058oe463d4208a93884ffdc59t0b6e";
+  let apiForecastUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiForecastKey}&units=metric`;
+  axios.get(apiForecastUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
+
+  // let forecast = document.querySelector("#forecast");
 
   let shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
@@ -138,4 +147,5 @@ let searchFormCity = document.querySelector("#search-form");
 searchFormCity.addEventListener("submit", searchSubmit);
 
 searchCity("Melbourne");
-displayForecast();
+
+// displayForecast();
