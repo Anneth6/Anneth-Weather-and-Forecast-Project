@@ -84,6 +84,33 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  let forecastHtml = "";
+
+  shortDays.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `
+  <div class="forecast-days">
+    <div class="forecast-day">${day}</div>
+    <div class="forecast-icon">🌤️</div>
+    <div class="forecast-temperatures">
+      <div>
+        <span class="forecast-variable-max">15&deg;</span>
+        <span class="forecast-variable-min">9&deg;</span>
+      </div>
+    </div>
+  </div>
+`;
+  });
+
+  forecast.innerHTML = forecastHtml;
+}
+
 let themeButton = document.querySelector(".themeButton");
 themeButton.addEventListener("click", changeTheme);
 
@@ -91,3 +118,4 @@ let searchFormCity = document.querySelector("#search-form");
 searchFormCity.addEventListener("submit", searchSubmit);
 
 searchCity("Melbourne");
+displayForecast();
