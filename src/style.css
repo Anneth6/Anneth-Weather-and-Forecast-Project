@@ -204,9 +204,10 @@ main {
   text-align: center;
 }
 .forecast-icon {
-  font-size: 32px;
+  width: 45px;
+  height: 45px;
   display: block;
-  text-align: center;
+  margin: 0 auto;
 }
 .forecast-temperatures {
   font-size: 16px;
@@ -221,7 +222,10 @@ main {
   color: rgb(172, 172, 172);
   font-weight: 300;
 }
-
+.dark .forecast-variable-min {
+  color: rgb(255, 224, 178, 0.6);
+  font-weight: 300;
+}
 footer {
   color: rgba(0, 0, 0, 0.7);
   text-align: center;

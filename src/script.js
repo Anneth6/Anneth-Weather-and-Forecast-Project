@@ -104,6 +104,14 @@ function searchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+// created day conversion from timestamp in api
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 // sets api search funtion, sourcing city from searchInput
 // establishes axios function to retrive weather details
 function getForecast(city) {
@@ -116,24 +124,31 @@ function getForecast(city) {
 function displayForecast(response) {
   console.log(response.data);
 
-  let shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
 
-  shortDays.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `
   <div class="forecast-days">
-    <div class="forecast-day">${day}</div>
-    <div class="forecast-icon">🌤️</div>
+    <div class="forecast-day">${formatDay(day.time)}</div>
+    <div class="forecast-icon"><img src="${
+      day.condition.icon_url
+    }" class="forecast-icon" /></div>
     <div class="forecast-temperatures">
       <div>
-        <span class="forecast-variable-max">15&deg;</span>
-        <span class="forecast-variable-min">9&deg;</span>
+        <span class="forecast-variable-max">${Math.round(
+          day.temperature.maximum
+        )}&deg;</span>
+        <span class="forecast-variable-min">${Math.round(
+          day.temperature.minimum
+        )}&deg</span>
       </div>
     </div>
   </div>
 `;
+    }
   });
 
   forecast.innerHTML = forecastHtml;
